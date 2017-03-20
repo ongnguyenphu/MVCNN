@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wool.Model", "Wool.Model\Wo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wool.Data", "Wool.Data\Wool.Data.csproj", "{9FAE2503-CF0E-41EB-838A-501C446C45BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wool.Service", "Wool.Service\Wool.Service.csproj", "{31A51C8B-A023-47EC-99F8-2A1CDCB60081}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9FAE2503-CF0E-41EB-838A-501C446C45BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FAE2503-CF0E-41EB-838A-501C446C45BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FAE2503-CF0E-41EB-838A-501C446C45BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31A51C8B-A023-47EC-99F8-2A1CDCB60081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31A51C8B-A023-47EC-99F8-2A1CDCB60081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31A51C8B-A023-47EC-99F8-2A1CDCB60081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31A51C8B-A023-47EC-99F8-2A1CDCB60081}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
