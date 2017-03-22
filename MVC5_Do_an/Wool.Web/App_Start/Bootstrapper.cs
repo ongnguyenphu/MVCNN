@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using Wool.Data.Infrastructure;
 using Wool.Data.Repositories;
 using Wool.Service;
+using Wool.Web.Mappings;
 
 namespace Wool.Web.App_Start
 {
@@ -17,6 +18,7 @@ namespace Wool.Web.App_Start
         public static void Run()
         {
             SetAutofacContainer();
+            AutoMapperConfiguration.Configure();
         }
 
         public static void SetAutofacContainer()
