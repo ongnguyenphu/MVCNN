@@ -134,17 +134,82 @@
     </Content>
     <Content Include="cdn\Bootstrap\bootstrap.min.js" />
     <Content Include="Global.asax" />
+    <Content Include="Resources\CSS\animate.css" />
     <Content Include="Resources\CSS\bootstrap-theme.css" />
     <Content Include="Resources\CSS\bootstrap-theme.min.css" />
     <Content Include="Resources\CSS\bootstrap.css" />
     <Content Include="Resources\CSS\bootstrap.min.css" />
+    <Content Include="Resources\CSS\font-awesome.min.css" />
+    <Content Include="Resources\CSS\main.css" />
+    <Content Include="Resources\CSS\prettyPhoto.css" />
+    <Content Include="Resources\CSS\price-range.css" />
+    <Content Include="Resources\CSS\responsive.css" />
     <Content Include="Resources\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Resources\images\404\404.png" />
+    <Content Include="Resources\images\blog\blog-one.jpg" />
+    <Content Include="Resources\images\blog\blog-three.jpg" />
+    <Content Include="Resources\images\blog\blog-two.jpg" />
+    <Content Include="Resources\images\blog\man-four.jpg" />
+    <Content Include="Resources\images\blog\man-one.jpg" />
+    <Content Include="Resources\images\blog\man-three.jpg" />
+    <Content Include="Resources\images\blog\man-two.jpg" />
+    <Content Include="Resources\images\blog\socials.png" />
+    <Content Include="Resources\images\cart\one.png" />
+    <Content Include="Resources\images\cart\three.png" />
+    <Content Include="Resources\images\cart\two.png" />
+    <Content Include="Resources\images\home\bg_border.png" />
+    <Content Include="Resources\images\home\gallery1.jpg" />
+    <Content Include="Resources\images\home\gallery2.jpg" />
+    <Content Include="Resources\images\home\gallery3.jpg" />
+    <Content Include="Resources\images\home\gallery4.jpg" />
+    <Content Include="Resources\images\home\girl1.jpg" />
+    <Content Include="Resources\images\home\girl2.jpg" />
+    <Content Include="Resources\images\home\girl3.jpg" />
+    <Content Include="Resources\images\home\iframe1.png" />
+    <Content Include="Resources\images\home\iframe2.png" />
+    <Content Include="Resources\images\home\iframe3.png" />
+    <Content Include="Resources\images\home\iframe4.png" />
+    <Content Include="Resources\images\home\logo.png" />
+    <Content Include="Resources\images\home\map.png" />
+    <Content Include="Resources\images\home\new.png" />
+    <Content Include="Resources\images\home\partner1.png" />
+    <Content Include="Resources\images\home\partner2.png" />
+    <Content Include="Resources\images\home\partner3.png" />
+    <Content Include="Resources\images\home\partner4.png" />
+    <Content Include="Resources\images\home\pricing.png" />
+    <Content Include="Resources\images\home\product1.jpg" />
+    <Content Include="Resources\images\home\product2.jpg" />
+    <Content Include="Resources\images\home\product3.jpg" />
+    <Content Include="Resources\images\home\product4.jpg" />
+    <Content Include="Resources\images\home\product5.jpg" />
+    <Content Include="Resources\images\home\product6.jpg" />
+    <Content Include="Resources\images\home\recommend1.jpg" />
+    <Content Include="Resources\images\home\recommend2.jpg" />
+    <Content Include="Resources\images\home\recommend3.jpg" />
+    <Content Include="Resources\images\home\sale.png" />
+    <Content Include="Resources\images\home\searchicon.png" />
+    <Content Include="Resources\images\home\shipping.jpg" />
+    <Content Include="Resources\images\product-details\1.jpg" />
+    <Content Include="Resources\images\product-details\new.jpg" />
+    <Content Include="Resources\images\product-details\rating.png" />
+    <Content Include="Resources\images\product-details\share.png" />
+    <Content Include="Resources\images\product-details\similar1.jpg" />
+    <Content Include="Resources\images\product-details\similar2.jpg" />
+    <Content Include="Resources\images\product-details\similar3.jpg" />
+    <Content Include="Resources\images\shop\advertisement.jpg" />
+    <Content Include="Resources\images\shop\product10.jpg" />
+    <Content Include="Resources\images\shop\product11.jpg" />
+    <Content Include="Resources\images\shop\product12.jpg" />
+    <Content Include="Resources\images\shop\product7.jpg" />
+    <Content Include="Resources\images\shop\product8.jpg" />
+    <Content Include="Resources\images\shop\product9.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -171,6 +236,8 @@
     <Content Include="Resources\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Resources\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -180,7 +247,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
