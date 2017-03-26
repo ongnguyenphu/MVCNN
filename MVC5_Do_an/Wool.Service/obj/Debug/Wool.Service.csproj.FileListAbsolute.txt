@@ -1,0 +1,11 @@
+C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Service\bin\Debug\Wool.Service.dll
+C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Service\bin\Debug\Wool.Service.pdb
+C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Service\bin\Debug\Wool.Data.dll
+C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Service\bin\Debug\Wool.Model.dll
+C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Service\bin\Debug\EntityFramework.dll
+C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Service\bin\Debug\Wool.Data.pdb
+C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Service\bin\Debug\Wool.Model.pdb
+C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Service\bin\Debug\EntityFramework.xml
+C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Service\obj\Debug\Wool.Service.csprojResolveAssemblyReference.cache
+C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Service\obj\Debug\Wool.Service.dll
+C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Service\obj\Debug\Wool.Service.pdb
