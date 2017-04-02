@@ -17,11 +17,13 @@ C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\Wool.Web.pdb
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\Antlr3.Runtime.dll
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\Autofac.dll
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\Autofac.Integration.Mvc.dll
+C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\AutoMapper.dll
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\EntityFramework.dll
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\EntityFramework.SqlServer.dll
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\Newtonsoft.Json.dll
+C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\System.ValueTuple.dll
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\System.Web.Helpers.dll
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\System.Web.Mvc.dll
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\System.Web.Optimization.dll
@@ -39,6 +41,7 @@ C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\Wool.Service.pdb
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\Antlr3.Runtime.pdb
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\Autofac.xml
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\Autofac.Integration.Mvc.xml
+C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\AutoMapper.xml
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\EntityFramework.xml
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\EntityFramework.SqlServer.xml
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
@@ -53,6 +56,3 @@ C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\System.Web.Mvc.xml
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\obj\Debug\Wool.Web.csprojResolveAssemblyReference.cache
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\obj\Debug\Wool.Web.dll
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\obj\Debug\Wool.Web.pdb
-C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\AutoMapper.dll
-C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\System.ValueTuple.dll
-C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Web\bin\AutoMapper.xml

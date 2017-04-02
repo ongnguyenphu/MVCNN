@@ -11,7 +11,9 @@ namespace Wool.Data
 {
     public class WoolEntities : DbContext
     {
-        public WoolEntities() : base("WoolDatabase") { }
+        public WoolEntities() : base("WoolDatabase") {
+
+        }
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }

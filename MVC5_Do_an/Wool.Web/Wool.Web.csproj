@@ -144,6 +144,7 @@
     <Content Include="Resources\CSS\prettyPhoto.css" />
     <Content Include="Resources\CSS\price-range.css" />
     <Content Include="Resources\CSS\responsive.css" />
+    <Content Include="Resources\fonts\fontawesome-webfont.svg" />
     <Content Include="Resources\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Resources\images\404\404.png" />
     <Content Include="Resources\images\blog\blog-one.jpg" />
@@ -203,7 +204,9 @@
     <Content Include="Resources\images\shop\product7.jpg" />
     <Content Include="Resources\images\shop\product8.jpg" />
     <Content Include="Resources\images\shop\product9.jpg" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Bootstrapper.cs" />
@@ -238,6 +241,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Resources\fonts\fontawesome-webfont.woff" />
+    <Content Include="Resources\fonts\FontAwesome.otf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -63,6 +63,7 @@
     <Compile Include="Repositories\IRepositories\IProductRepository.cs" />
     <Compile Include="Repositories\CategoryRepository.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="StoreSeedData.cs" />
     <Compile Include="WoolEntities.cs" />
   </ItemGroup>
   <ItemGroup>
