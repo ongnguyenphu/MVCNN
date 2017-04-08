@@ -13,6 +13,7 @@ namespace Wool.Data.Configuration
         public CategoryConfiguration() {
             ToTable("Categories");
             Property(category => category.Name).IsRequired().HasMaxLength(50);
+            Property(category => category.NameVN).IsRequired().HasMaxLength(50);
         }
     }
 }

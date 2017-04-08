@@ -15,9 +15,8 @@ namespace Wool.Web.Mappings
             CreateMap<ProductFormViewModel, Product>()
                 .ForMember(g => g.Name, map => map.MapFrom(vm => vm.ProductTitle))
                 .ForMember(g => g.Description, map => map.MapFrom(vm => vm.ProductDescription))
-                .ForMember(g => g.Price, map => map.MapFrom(vm => vm.ProductPrice))
-                .ForMember(g => g.CategoryID, map => map.MapFrom(vm => vm.ProductCategory))
-                .ForMember(g => g.Brand, map => map.MapFrom(vm => vm.File.FileName));
+                .ForMember(g => g.UnitPrice, map => map.MapFrom(vm => vm.ProductPrice))
+                .ForMember(g => g.CategoryID, map => map.MapFrom(vm => vm.ProductCategory));
         }
 
         public override string ProfileName

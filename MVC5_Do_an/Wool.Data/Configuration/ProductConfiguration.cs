@@ -13,8 +13,18 @@ namespace Wool.Data.Configuration
         public ProductConfiguration() {
             ToTable("Products");
             Property(product => product.Name).IsRequired().HasMaxLength(50);
-            Property(product => product.Price).IsRequired();
+            Property(product => product.UnitPrice).IsRequired();
+            Property(product => product.UnitBrief).IsRequired();
+            Property(product => product.Image).IsRequired();
+            Property(product => product.Available).IsRequired();
+            Property(product => product.ProductDate).IsRequired();
             Property(product => product.CategoryID).IsRequired();
+            Property(product => product.SupplierID).IsRequired();
+            Property(product => product.Quantity).IsRequired();
+            Property(product => product.Discount).IsRequired();
+            Property(product => product.Special).IsRequired();
+            Property(product => product.Latest).IsRequired();
+            Property(product => product.Views).IsRequired();
         }
     }
 }

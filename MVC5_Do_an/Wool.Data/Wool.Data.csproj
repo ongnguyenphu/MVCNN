@@ -49,6 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\WebActionConfiguration.cs" />
+    <Compile Include="Configuration\SupplierConfiguration.cs" />
+    <Compile Include="Configuration\RoleConfiguration.cs" />
+    <Compile Include="Configuration\OrderConfiguration.cs" />
+    <Compile Include="Configuration\OrderDetailConfiguration.cs" />
+    <Compile Include="Configuration\MasterConfiguration.cs" />
+    <Compile Include="Configuration\MasterRoleConfiguration.cs" />
+    <Compile Include="Configuration\ActionRoleConfiguration.cs" />
+    <Compile Include="Configuration\CustomerConfiguration.cs" />
     <Compile Include="Configuration\ProductConfiguration.cs" />
     <Compile Include="Configuration\CategoryConfiguration.cs" />
     <Compile Include="Infrastructure\DbFactory.cs" />
