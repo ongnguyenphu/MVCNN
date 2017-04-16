@@ -8,7 +8,7 @@ namespace Wool.Model
 {
     public class Role
     {
-        public string ID { get; set; }
+        public long ID { get; set; }
         public string Name { get; set; }
     }
 }

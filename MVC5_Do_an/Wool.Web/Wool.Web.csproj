@@ -133,6 +133,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="cdn\Bootstrap\bootstrap.min.js" />
+    <Content Include="cdn\Resources\bootstrap.min.js" />
+    <Content Include="cdn\Resources\contact.js" />
+    <Content Include="cdn\Resources\gmaps.js" />
+    <Content Include="cdn\Resources\html5shiv.js" />
+    <Content Include="cdn\Resources\jquery.js" />
+    <Content Include="cdn\Resources\jquery.prettyPhoto.js" />
+    <Content Include="cdn\Resources\jquery.scrollUp.min.js" />
+    <Content Include="cdn\Resources\main.js" />
+    <Content Include="cdn\Resources\price-range.js" />
     <Content Include="Global.asax" />
     <Content Include="Resources\CSS\animate.css" />
     <Content Include="Resources\CSS\bootstrap-theme.css" />
@@ -212,6 +221,7 @@
     <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -243,6 +253,12 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Resources\fonts\fontawesome-webfont.woff" />
     <Content Include="Resources\fonts\FontAwesome.otf" />
+    <Content Include="Views\Shared\_Supplier.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Slider.cshtml" />
+    <Content Include="Views\Shared\_Category.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

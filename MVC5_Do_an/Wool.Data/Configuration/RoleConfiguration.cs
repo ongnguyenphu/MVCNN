@@ -12,7 +12,7 @@ namespace Wool.Data.Configuration
     {
         public RoleConfiguration() {
             ToTable("Roles");
-            Property(customer => customer.ID).IsRequired().HasMaxLength(50);
+            Property(customer => customer.ID).IsRequired();
             Property(customer => customer.Name).IsRequired().HasMaxLength(50);
         }
     }

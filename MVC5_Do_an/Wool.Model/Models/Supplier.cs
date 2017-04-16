@@ -8,7 +8,7 @@ namespace Wool.Model
 {
     public class Supplier
     {
-        public string ID { get; set; }
+        public long ID { get; set; }
         public string Name { get; set; }
         public string Logo { get; set; }
         public string Email { get; set; }
