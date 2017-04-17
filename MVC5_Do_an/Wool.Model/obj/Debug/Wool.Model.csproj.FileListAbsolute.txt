@@ -1,5 +1,5 @@
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Model\bin\Debug\Wool.Model.dll
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Model\bin\Debug\Wool.Model.pdb
+C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Model\obj\Debug\Wool.Model.csprojResolveAssemblyReference.cache
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Model\obj\Debug\Wool.Model.dll
 C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Model\obj\Debug\Wool.Model.pdb
-C:\Users\Phu\Documents\GitHub\MVCNN\MVC5_Do_an\Wool.Model\obj\Debug\Wool.Model.csprojResolveAssemblyReference.cache

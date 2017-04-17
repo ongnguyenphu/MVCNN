@@ -129,6 +129,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\js\bars.js" />
+    <Content Include="Areas\Admin\js\bootstrap.js" />
+    <Content Include="Areas\Admin\js\Chart.min.js" />
+    <Content Include="Areas\Admin\js\chartinator.js" />
+    <Content Include="Areas\Admin\js\gmaps.js" />
+    <Content Include="Areas\Admin\js\jquery-2.1.1.min.js" />
+    <Content Include="Areas\Admin\js\jquery.magnific-popup.js" />
+    <Content Include="Areas\Admin\js\jquery.nicescroll.js" />
+    <Content Include="Areas\Admin\js\modernizr.min.js" />
+    <Content Include="Areas\Admin\js\nivo-lightbox.min.js" />
+    <Content Include="Areas\Admin\js\scripts.js" />
+    <Content Include="Areas\Admin\js\skycons.js" />
+    <Content Include="Areas\Admin\Resources\css\demo-page.css" />
+    <Content Include="Areas\Admin\Resources\css\examples.css" />
+    <Content Include="Areas\Admin\Resources\css\font-awesome.css" />
+    <Content Include="Areas\Admin\Resources\css\geochart.css" />
+    <Content Include="Areas\Admin\Resources\css\hover.css" />
+    <Content Include="Areas\Admin\Resources\css\magnific-popup.css" />
+    <Content Include="Areas\Admin\Resources\css\style.css" />
+    <Content Include="Areas\Admin\Resources\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Admin\Resources\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="cdn\Bootstrap\bootstrap.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -221,6 +242,8 @@
     <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -259,6 +282,20 @@
     <Content Include="Views\Shared\_Slider.cshtml" />
     <Content Include="Views\Shared\_Category.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Resources\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\Resources\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Admin\Resources\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Admin\Resources\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\Admin\Resources\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\Resources\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Admin\Resources\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\Admin\Resources\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Admin\Resources\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -268,6 +305,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
