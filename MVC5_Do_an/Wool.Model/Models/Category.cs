@@ -18,7 +18,6 @@ namespace Wool.Model
         public Category()
         {
             DateCreated = DateTime.Now;
-
         }
     }
 }

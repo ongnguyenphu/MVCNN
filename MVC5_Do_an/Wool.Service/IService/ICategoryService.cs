@@ -13,6 +13,9 @@ namespace Wool.Service
         Category GetCategoryByID(long id);
         Category GetCategoryByName(string name);
         void CreateCategory(Category category);
+        void DeleteCategory(Category category);
+        void UpdateCategory(Category category);
+
         void SaveCategory();
     }
 }

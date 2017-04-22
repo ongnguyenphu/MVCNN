@@ -47,11 +47,20 @@ namespace Wool.Service
             categoryRepository.Add(category);
         }
 
+        public void DeleteCategory(Category category)
+        {
+            categoryRepository.Delete(category);
+        }
+
+        public void UpdateCategory(Category category)
+        {
+            categoryRepository.Update(category);
+        }
+
         public void SaveCategory()
         {
             unitOfWork.Commit();
         }
-
 
 
         #endregion

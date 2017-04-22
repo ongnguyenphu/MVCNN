@@ -11,5 +11,6 @@ namespace Wool.Data.Repositories
     public interface ICategoryRepository : IRepository<Category>
     {
         Category GetCategoryByName(string categoryName);
+
     }
 }
