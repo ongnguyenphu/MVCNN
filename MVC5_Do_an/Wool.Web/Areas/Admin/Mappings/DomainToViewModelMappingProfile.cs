@@ -15,6 +15,9 @@ namespace Wool.Web.Areas.Admin.Mappings
         {
             CreateMap<Category, CategoryViewModel>();
             CreateMap<Supplier, SupplierViewModel>();
+            CreateMap<Product, ProductViewModel>()
+                .ForMember(vm => vm.CategoryName, map => map.MapFrom(p => p.Category.Name))
+                .ForMember(vm => vm.SupplierName, map => map.MapFrom(p => p.Supplier.Name));
         }
 
         public override string ProfileName

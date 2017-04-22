@@ -1,33 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace Wool.Model
+namespace Wool.Web.Areas.Admin.ViewModels
 {
-    public class Product
+    public class ProductViewModel
     {
-        public long ID { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public string UnitBrief { get; set; }
         public double UnitPrice { get; set; }
         public string Image { get; set; }
-        public DateTime ProductDate{ get; set; }
+        public DateTime ProductDate { get; set; }
         public bool Available { get; set; }
         public string Description { get; set; }
-        public long CategoryID { get; set; }
-        public long SupplierID { get; set; }
         public int Quantity { get; set; }
         public double Discount { get; set; }
         public bool Special { get; set; }
         public bool Latest { get; set; }
         public long Views { get; set; }
-        
-        public virtual Category Category { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-        public virtual Supplier Supplier { get; set; }
-
-
+        public long CategoryID { get; set; }
+        public long SupplierID { get; set; }
+        public string CategoryName { get; set; }
+        public string SupplierName { get; set; }
     }
 }

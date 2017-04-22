@@ -48,6 +48,16 @@ namespace Wool.Service
             productRepository.Add(product);
         }
 
+        public void DeleteProduct(Product product)
+        {
+            productRepository.Delete(product);
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            productRepository.Update(product);
+        }
+
         public void SaveProduct()
         {
             unitOfWork.Commit();

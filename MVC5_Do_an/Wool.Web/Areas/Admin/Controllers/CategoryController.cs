@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Wool.Model;
 using Wool.Service;
-using Wool.Web.ViewModels;
+using Wool.Web.Areas.Admin.ViewModels;
 
 namespace Wool.Web.Areas.Admin.Controllers
 {

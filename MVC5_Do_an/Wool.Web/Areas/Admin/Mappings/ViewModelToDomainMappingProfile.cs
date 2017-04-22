@@ -12,10 +12,9 @@ namespace Wool.Web.Areas.Admin.Mappings
     {
         public ViewModelToDomainMappingProfile()
         {
-            CreateMap<CategoryViewModel, Category>()
-                .ForMember(c => c.Name, map => map.MapFrom(vm => vm.Name));
-
+            CreateMap<CategoryViewModel, Category>();
             CreateMap<SupplierViewModel, Supplier>();
+            CreateMap<ProductViewModel, Product>();
         }
 
         public override string ProfileName

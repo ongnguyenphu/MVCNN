@@ -13,6 +13,8 @@ namespace Wool.Service
         IEnumerable<Product> GetCategoryProducts(string categoryName, string productName = null);
         Product GetProductByID(long id);
         void CreateProduct(Product product);
+        void DeleteProduct(Product product);
+        void UpdateProduct(Product product);
         void SaveProduct();
     }
 }
