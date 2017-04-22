@@ -13,11 +13,13 @@ namespace Wool.Model
         public string NameVN { get; set; }
         public DateTime? DateCreated { get; set; }
         public DateTime? DateUpdated { get; set; }
-        public virtual List<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
+
 
         public Category()
         {
             DateCreated = DateTime.Now;
+            this.Products = new HashSet<Product>();
         }
     }
 }

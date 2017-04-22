@@ -28,20 +28,11 @@ namespace Wool.Web.Areas.Admin.Controllers
         public ActionResult Index()
         {
             var vmProduct = new ProductViewModel();
-
             IEnumerable<ProductViewModel> viewModelProducts;
-            IEnumerable<Product> products;
 
-            products = productService.GetProducts().ToList();
-
-            var categories = categoryService.GetCategories().ToList();
-            var suppliers = supplierService.GetSuppliers().ToList();
-            ViewBag.CategoryId = new SelectList(categories, "Id", "Name");
-            ViewBag.SupplierId = new SelectList(suppliers, "Id", "Name");
-
-
-            var result = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(products);
-            ViewBag.Items = result;
+            LoadCategories();
+            LoadSuppliers();
+            LoadProducts();
 
             return View(vmProduct);
         }
@@ -66,36 +57,24 @@ namespace Wool.Web.Areas.Admin.Controllers
                 productService.SaveProduct();
                 ModelState.Clear();
             }
-            var products = productService.GetProducts().ToList();
-            ViewBag.Items = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(products);
-
-            var categories = categoryService.GetCategories().ToList();
-            var suppliers = supplierService.GetSuppliers().ToList();
-            ViewBag.CategoryId = new SelectList(categories, "Id", "Name");
-            ViewBag.SupplierId = new SelectList(suppliers, "Id", "Name");
+            LoadProducts();
+            LoadCategories();
+            LoadSuppliers();
             return View("Index");
         }
 
         public ActionResult Edit(long id)
         {
-            var categories = categoryService.GetCategories().ToList();
-            var suppliers = supplierService.GetSuppliers().ToList();
-            ViewBag.CategoryId = new SelectList(categories, "Id", "Name");
-            ViewBag.SupplierId = new SelectList(suppliers, "Id", "Name");
+            LoadCategories();
+            LoadSuppliers();
+            LoadProducts();
             var product = productService.GetProductByID(id);
-            var products = productService.GetProducts().ToList();
-            ViewBag.Items = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(products);
             var productViewModel = Mapper.Map<Product, ProductViewModel>(product);
             return View("Index", productViewModel);
         }
 
         public ActionResult Delete(long id)
         {
-            var categories = categoryService.GetCategories().ToList();
-            var suppliers = supplierService.GetSuppliers().ToList();
-            ViewBag.CategoryId = new SelectList(categories, "Id", "Name");
-            ViewBag.SupplierId = new SelectList(suppliers, "Id", "Name");
-
             var product = productService.GetProductByID(id);
             var productViewModel = Mapper.Map<Product, ProductViewModel>(product);
             try
@@ -104,8 +83,9 @@ namespace Wool.Web.Areas.Admin.Controllers
                 productService.SaveProduct();
                 ModelState.Clear();
                 ModelState.AddModelError("", "Xóa thành công !");
-                var products = productService.GetProducts().ToList();
-                ViewBag.Items = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(products);
+                LoadCategories();
+                LoadSuppliers();
+                LoadProducts();
                 return View("Index");
             }
             catch
@@ -134,13 +114,35 @@ namespace Wool.Web.Areas.Admin.Controllers
             {
                 ModelState.AddModelError("", "Cap nhat thất bại !");
             }
-            var products = productService.GetProducts().ToList();
-            ViewBag.Items = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(products);
-            var categories = categoryService.GetCategories().ToList();
-            var suppliers = supplierService.GetSuppliers().ToList();
-            ViewBag.CategoryId = new SelectList(categories, "Id", "Name");
-            ViewBag.SupplierId = new SelectList(suppliers, "Id", "Name");
+            LoadProducts();
+            LoadCategories();
+            LoadSuppliers();
+
             return View("Index");
         }
+
+        #region Private Load
+
+        private void LoadCategories()
+        {
+            List<Category> categories = categoryService.GetCategories().ToList();
+            ViewBag.CategoryId = new SelectList(categories, "Id", "Name");
+        }
+        private void LoadSuppliers()
+        {
+            List<Supplier> suppliers = supplierService.GetSuppliers().ToList();
+            ViewBag.SupplierId = new SelectList(suppliers, "Id", "Name");
+        }
+
+        private void LoadProducts()
+        {
+            IEnumerable<Product> products = productService.GetProducts().ToList();
+            IEnumerable<ProductViewModel> result = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(products);
+            ViewBag.Items = result;
+        }
+
+        #endregion
+
+
     }
 }

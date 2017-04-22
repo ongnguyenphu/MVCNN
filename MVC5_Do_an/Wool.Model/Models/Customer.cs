@@ -8,6 +8,11 @@ namespace Wool.Model
 {
     public class Customer
     {
+        public Customer()
+        {
+            this.Orders = new HashSet<Order>();
+        }
+
         public long ID { get; set; }
         public string Password { get; set; }
         public string FullName { get; set; }
@@ -15,6 +20,6 @@ namespace Wool.Model
         public string Photo { get; set; }
         public bool Activated { get; set; }
 
-        public virtual List<Order> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

@@ -8,6 +8,12 @@ namespace Wool.Model
 {
     public class Supplier
     {
+        public Supplier()
+        {
+            this.Products = new HashSet<Product>();
+            DateCreated = DateTime.Now;
+        }
+
         public long ID { get; set; }
         public string Name { get; set; }
         public string Logo { get; set; }
@@ -15,6 +21,6 @@ namespace Wool.Model
         public string Phone { get; set; }
         public DateTime? DateCreated { get; set; }
         public DateTime? DateUpdated { get; set; }
-        public virtual List<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

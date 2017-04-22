@@ -8,6 +8,11 @@ namespace Wool.Model
 {
     public class Product
     {
+        public Product()
+        {
+            this.OrderDetails = new HashSet<OrderDetail>();
+        }
+
         public long ID { get; set; }
         public string Name { get; set; }
         public string UnitBrief { get; set; }
