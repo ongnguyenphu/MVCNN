@@ -68,6 +68,8 @@
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\SupplierRepository.cs" />
+    <Compile Include="Repositories\IRepositories\ISupplierRepository.cs" />
     <Compile Include="Repositories\IRepositories\ICategoryRepository.cs" />
     <Compile Include="Repositories\IRepositories\IProductRepository.cs" />
     <Compile Include="Repositories\CategoryRepository.cs" />

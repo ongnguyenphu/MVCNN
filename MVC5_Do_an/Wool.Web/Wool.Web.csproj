@@ -243,7 +243,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\SupplierController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Mappings\AdminAutoMapperConfiguration.cs" />
+    <Compile Include="Areas\Admin\Mappings\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="Areas\Admin\Mappings\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="Areas\Admin\ViewModels\CategoryViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\SupplierViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -296,6 +302,7 @@
     <Content Include="Areas\Admin\Resources\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Areas\Admin\Resources\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Areas\Admin\Resources\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Admin\Views\Supplier\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -305,7 +312,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="images\suppliers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

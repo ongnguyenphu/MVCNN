@@ -17,6 +17,7 @@ namespace Wool.Data
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
 
         public virtual void Commit()
         {
@@ -27,6 +28,7 @@ namespace Wool.Data
         {
             modelBuilder.Configurations.Add(new ProductConfiguration());
             modelBuilder.Configurations.Add(new CategoryConfiguration());
+            modelBuilder.Configurations.Add(new SupplierConfiguration());
         }
 
     }
