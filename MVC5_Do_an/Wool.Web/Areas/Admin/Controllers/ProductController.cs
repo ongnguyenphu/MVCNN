@@ -1,12 +1,10 @@
 ﻿using AutoMapper;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Wool.Model;
 using Wool.Service;
-using Wool.Web.Areas.Admin.ViewModels;
+using Wool.Web.ViewModels.Admin;
 
 namespace Wool.Web.Areas.Admin.Controllers
 {
@@ -27,8 +25,8 @@ namespace Wool.Web.Areas.Admin.Controllers
         // GET: Admin/Product
         public ActionResult Index()
         {
-            var vmProduct = new ProductViewModel();
-            IEnumerable<ProductViewModel> viewModelProducts;
+            var vmProduct = new AdminProductViewModel();
+            IEnumerable<AdminProductViewModel> viewModelProducts;
 
             LoadCategories();
             LoadSuppliers();
@@ -37,7 +35,7 @@ namespace Wool.Web.Areas.Admin.Controllers
             return View(vmProduct);
         }
 
-        public ActionResult Insert(ProductViewModel newProduct)
+        public ActionResult Insert(AdminProductViewModel newProduct)
         {
             if (newProduct != null)
             {
@@ -52,7 +50,7 @@ namespace Wool.Web.Areas.Admin.Controllers
                     newProduct.Image = "Product.png";
                 }
 
-                var product = Mapper.Map<ProductViewModel, Product>(newProduct);
+                var product = Mapper.Map<AdminProductViewModel, Product>(newProduct);
                 productService.CreateProduct(product);
                 productService.SaveProduct();
                 ModelState.Clear();
@@ -69,14 +67,14 @@ namespace Wool.Web.Areas.Admin.Controllers
             LoadSuppliers();
             LoadProducts();
             var product = productService.GetProductByID(id);
-            var productViewModel = Mapper.Map<Product, ProductViewModel>(product);
+            var productViewModel = Mapper.Map<Product, AdminProductViewModel>(product);
             return View("Index", productViewModel);
         }
 
         public ActionResult Delete(long id)
         {
             var product = productService.GetProductByID(id);
-            var productViewModel = Mapper.Map<Product, ProductViewModel>(product);
+            var productViewModel = Mapper.Map<Product, AdminProductViewModel>(product);
             try
             {
                 productService.DeleteProduct(product);
@@ -95,7 +93,7 @@ namespace Wool.Web.Areas.Admin.Controllers
             }
         }
 
-        public ActionResult Update(ProductViewModel updatedProduct)
+        public ActionResult Update(AdminProductViewModel updatedProduct)
         {
             try
             {
@@ -105,7 +103,7 @@ namespace Wool.Web.Areas.Admin.Controllers
                     updatedProduct.Image = file.FileName;
                     file.SaveAs(Server.MapPath("~/images/products/" + file.FileName));
                 }
-                var product = Mapper.Map<ProductViewModel, Product>(updatedProduct);
+                var product = Mapper.Map<AdminProductViewModel, Product>(updatedProduct);
                 productService.UpdateProduct(product);
                 productService.SaveProduct();
                 ModelState.AddModelError("", "Cap nhat thành công !");
@@ -137,7 +135,7 @@ namespace Wool.Web.Areas.Admin.Controllers
         private void LoadProducts()
         {
             IEnumerable<Product> products = productService.GetProducts().ToList();
-            IEnumerable<ProductViewModel> result = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(products);
+            IEnumerable<AdminProductViewModel> result = Mapper.Map<IEnumerable<Product>, IEnumerable<AdminProductViewModel>>(products);
             ViewBag.Items = result;
         }
 

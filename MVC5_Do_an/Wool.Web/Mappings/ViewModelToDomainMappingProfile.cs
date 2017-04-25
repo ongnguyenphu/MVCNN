@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using Wool.Model;
 using Wool.Web.ViewModels;
+using Wool.Web.ViewModels.Admin;
 
 namespace Wool.Web.Mappings
 {
@@ -20,6 +21,19 @@ namespace Wool.Web.Mappings
 
             CreateMap<CategoryViewModel, Category>()
                 .ForMember(c => c.Name, map => map.MapFrom(vm => vm.Name));
+
+            CreateMap<SupplierViewModel, Supplier>();
+
+
+            #region Admin
+
+            CreateMap<AdminSupplierViewModel, Supplier>();
+            CreateMap<AdminProductViewModel, Product>();
+            CreateMap<AdminCategoryViewModel, Category>();
+
+            #endregion
+
+
         }
 
         public override string ProfileName

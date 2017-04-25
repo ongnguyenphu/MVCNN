@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Wool.Model;
 using Wool.Service;
-using Wool.Web.Areas.Admin.ViewModels;
-using Wool.Web.ViewModels;
+using Wool.Web.ViewModels.Admin;
 
 namespace Wool.Web.Areas.Admin.Controllers
 {
@@ -24,19 +21,19 @@ namespace Wool.Web.Areas.Admin.Controllers
         // GET: Admin/Supplier
         public ActionResult Index()
         {
-            var vmSupplier = new SupplierViewModel();
+            var vmSupplier = new AdminSupplierViewModel();
 
-            IEnumerable<SupplierViewModel> viewModelSuppliers;
+            IEnumerable<AdminSupplierViewModel> viewModelSuppliers;
             IEnumerable<Supplier> suppliers;
 
             suppliers = supplierService.GetSuppliers().ToList();
 
-            ViewBag.Items = Mapper.Map<IEnumerable<Supplier>, IEnumerable<SupplierViewModel>>(suppliers);
+            ViewBag.Items = Mapper.Map<IEnumerable<Supplier>, IEnumerable<AdminSupplierViewModel>>(suppliers);
 
             return View(vmSupplier);
         }
 
-        public ActionResult Insert(SupplierViewModel newSupplier)
+        public ActionResult Insert(AdminSupplierViewModel newSupplier)
         {
             if (newSupplier != null)
             {
@@ -51,13 +48,13 @@ namespace Wool.Web.Areas.Admin.Controllers
                     newSupplier.Logo = "Supplier.png";
                 }
 
-                var supplier = Mapper.Map<SupplierViewModel, Supplier>(newSupplier);
+                var supplier = Mapper.Map<AdminSupplierViewModel, Supplier>(newSupplier);
                 supplierService.CreateSupplier(supplier);
                 supplierService.SaveSupplier();
                 ModelState.Clear();
             }
             var suppliers = supplierService.GetSuppliers().ToList();
-            ViewBag.Items = Mapper.Map<IEnumerable<Supplier>, IEnumerable<SupplierViewModel>>(suppliers);
+            ViewBag.Items = Mapper.Map<IEnumerable<Supplier>, IEnumerable<AdminSupplierViewModel>>(suppliers);
 
             return View("Index");
         }
@@ -66,15 +63,15 @@ namespace Wool.Web.Areas.Admin.Controllers
         {
             var supplier = supplierService.GetSupplierByID(id);
             var suppliers = supplierService.GetSuppliers().ToList();
-            ViewBag.Items = Mapper.Map<IEnumerable<Supplier>, IEnumerable<SupplierViewModel>>(suppliers);
-            var supplierViewModel = Mapper.Map<Supplier, SupplierViewModel>(supplier);
+            ViewBag.Items = Mapper.Map<IEnumerable<Supplier>, IEnumerable<AdminSupplierViewModel>>(suppliers);
+            var supplierViewModel = Mapper.Map<Supplier, AdminSupplierViewModel>(supplier);
             return View("Index", supplierViewModel);
         }
 
         public ActionResult Delete(long id)
         {
             var supplier = supplierService.GetSupplierByID(id);
-            var supplierViewModel = Mapper.Map<Supplier, SupplierViewModel>(supplier);
+            var supplierViewModel = Mapper.Map<Supplier, AdminSupplierViewModel>(supplier);
             try
             {
                 supplierService.DeleteSupplier(supplier);
@@ -82,7 +79,7 @@ namespace Wool.Web.Areas.Admin.Controllers
                 ModelState.Clear();
                 ModelState.AddModelError("", "Xóa thành công !");
                 var suppliers = supplierService.GetSuppliers().ToList();
-                ViewBag.Items = Mapper.Map<IEnumerable<Supplier>, IEnumerable<SupplierViewModel>>(suppliers);
+                ViewBag.Items = Mapper.Map<IEnumerable<Supplier>, IEnumerable<AdminSupplierViewModel>>(suppliers);
                 return View("Index");
             }
             catch
@@ -92,7 +89,7 @@ namespace Wool.Web.Areas.Admin.Controllers
             }
         }
 
-        public ActionResult Update(SupplierViewModel updatedSupplier)
+        public ActionResult Update(AdminSupplierViewModel updatedSupplier)
         {
             try
             {
@@ -102,7 +99,7 @@ namespace Wool.Web.Areas.Admin.Controllers
                     updatedSupplier.Logo = file.FileName;
                     file.SaveAs(Server.MapPath("~/images/suppliers/" + file.FileName));
                 }
-                var supplier = Mapper.Map<SupplierViewModel, Supplier>(updatedSupplier);
+                var supplier = Mapper.Map<AdminSupplierViewModel, Supplier>(updatedSupplier);
                 supplierService.UpdateSupplier(supplier);
                 supplierService.SaveSupplier();
                 ModelState.AddModelError("", "Cap nhat thành công !");
@@ -112,7 +109,7 @@ namespace Wool.Web.Areas.Admin.Controllers
                 ModelState.AddModelError("", "Cap nhat thất bại !");
             }
             var suppliers = supplierService.GetSuppliers().ToList();
-            ViewBag.Items = Mapper.Map<IEnumerable<Supplier>, IEnumerable<SupplierViewModel>>(suppliers);
+            ViewBag.Items = Mapper.Map<IEnumerable<Supplier>, IEnumerable<AdminSupplierViewModel>>(suppliers);
             return View("Index");
         }
     }

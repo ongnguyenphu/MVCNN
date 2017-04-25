@@ -1,12 +1,10 @@
 ﻿using AutoMapper;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Wool.Model;
 using Wool.Service;
-using Wool.Web.Areas.Admin.ViewModels;
+using Wool.Web.ViewModels.Admin;
 
 namespace Wool.Web.Areas.Admin.Controllers
 {
@@ -23,29 +21,29 @@ namespace Wool.Web.Areas.Admin.Controllers
         // GET: Admin/Category
         public ActionResult Index()
         {
-            var vmCategory = new CategoryViewModel();
+            var vmCategory = new AdminCategoryViewModel();
 
-            IEnumerable<CategoryViewModel> viewModelCategories;
+            IEnumerable<AdminCategoryViewModel> viewModelCategories;
             IEnumerable<Category> categories;
 
             categories = categoryService.GetCategories().ToList();
 
-            ViewBag.Items = Mapper.Map<IEnumerable<Category>, IEnumerable<CategoryViewModel>>(categories);
+            ViewBag.Items = Mapper.Map<IEnumerable<Category>, IEnumerable<AdminCategoryViewModel>>(categories);
 
             return View(vmCategory);
         }
 
-        public ActionResult Insert(CategoryViewModel newCategory)
+        public ActionResult Insert(AdminCategoryViewModel newCategory)
         {
             if (newCategory != null)
             {
-                var category = Mapper.Map<CategoryViewModel, Category>(newCategory);
+                var category = Mapper.Map<AdminCategoryViewModel, Category>(newCategory);
                 categoryService.CreateCategory(category);
                 categoryService.SaveCategory();
                 ModelState.Clear();
             }
             var categories = categoryService.GetCategories().ToList();
-            ViewBag.Items = Mapper.Map<IEnumerable<Category>, IEnumerable<CategoryViewModel>>(categories);
+            ViewBag.Items = Mapper.Map<IEnumerable<Category>, IEnumerable<AdminCategoryViewModel>>(categories);
 
             return View("Index");
         }
@@ -54,15 +52,15 @@ namespace Wool.Web.Areas.Admin.Controllers
         {
             var category = categoryService.GetCategoryByID(id);
             var categories = categoryService.GetCategories().ToList();
-            ViewBag.Items = Mapper.Map<IEnumerable<Category>, IEnumerable<CategoryViewModel>>(categories);
-            var categoryViewModel = Mapper.Map<Category, CategoryViewModel>(category);
+            ViewBag.Items = Mapper.Map<IEnumerable<Category>, IEnumerable<AdminCategoryViewModel>>(categories);
+            var categoryViewModel = Mapper.Map<Category, AdminCategoryViewModel>(category);
             return View("Index", categoryViewModel);
         }
 
         public ActionResult Delete(long id)
         {
             var category = categoryService.GetCategoryByID(id);
-            var categoryViewModel = Mapper.Map<Category, CategoryViewModel>(category);
+            var categoryViewModel = Mapper.Map<Category, AdminCategoryViewModel>(category);
             try
             {
                 categoryService.DeleteCategory(category);
@@ -70,7 +68,7 @@ namespace Wool.Web.Areas.Admin.Controllers
                 ModelState.Clear();
                 ModelState.AddModelError("", "Xóa thành công !");
                 var categories = categoryService.GetCategories().ToList();
-                ViewBag.Items = Mapper.Map<IEnumerable<Category>, IEnumerable<CategoryViewModel>>(categories);
+                ViewBag.Items = Mapper.Map<IEnumerable<Category>, IEnumerable<AdminCategoryViewModel>>(categories);
                 return View("Index");
             }
             catch
@@ -80,11 +78,11 @@ namespace Wool.Web.Areas.Admin.Controllers
             }
         }
 
-        public ActionResult Update(CategoryViewModel updatedCategory)
+        public ActionResult Update(AdminCategoryViewModel updatedCategory)
         {
             try
             {
-                var category = Mapper.Map<CategoryViewModel, Category>(updatedCategory);
+                var category = Mapper.Map<AdminCategoryViewModel, Category>(updatedCategory);
                 categoryService.UpdateCategory(category);
                 categoryService.SaveCategory();
                 ModelState.AddModelError("", "Cap nhat thành công !");
@@ -94,7 +92,7 @@ namespace Wool.Web.Areas.Admin.Controllers
                 ModelState.AddModelError("", "Cap nhat thất bại !");
             }
             var categories = categoryService.GetCategories().ToList();
-            ViewBag.Items = Mapper.Map<IEnumerable<Category>, IEnumerable<CategoryViewModel>>(categories);
+            ViewBag.Items = Mapper.Map<IEnumerable<Category>, IEnumerable<AdminCategoryViewModel>>(categories);
             return View("Index");
         }
     }

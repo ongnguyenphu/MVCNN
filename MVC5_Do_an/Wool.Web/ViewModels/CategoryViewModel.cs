@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Wool.Model;
 
 namespace Wool.Web.ViewModels
 {
     public class CategoryViewModel
     {
-        public long Id { get; set; }
+        public long ID { get; set; }
         public string Name { get; set; }
         public string NameVN { get; set; }
-
-        public List<ProductViewModel> Products { get; set; }
     }
 }

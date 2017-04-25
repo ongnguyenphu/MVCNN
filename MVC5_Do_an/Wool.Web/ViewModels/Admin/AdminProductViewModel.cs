@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Wool.Web.Areas.Admin.ViewModels
+namespace Wool.Web.ViewModels.Admin
 {
-    public class ProductViewModel
+    public class AdminProductViewModel
     {
         public long Id { get; set; }
         public string Name { get; set; }
