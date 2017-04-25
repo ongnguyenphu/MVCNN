@@ -13,12 +13,14 @@ namespace Wool.Service
     {
         private readonly IProductRepository productRepository;
         private readonly ICategoryRepository categoryRepository;
+        private readonly ISupplierRepository supplierRepository;
         private readonly IUnitOfWork unitOfWork;
 
-        public ProductService(IProductRepository productRepository, ICategoryRepository categoryRepository, IUnitOfWork unitOfWork)
+        public ProductService(IProductRepository productRepository, ICategoryRepository categoryRepository, ISupplierRepository supplierRepository, IUnitOfWork unitOfWork)
         {
             this.productRepository = productRepository;
             this.categoryRepository = categoryRepository;
+            this.supplierRepository = supplierRepository;
             this.unitOfWork = unitOfWork;
         }
 
@@ -30,12 +32,24 @@ namespace Wool.Service
             return products;
         }
 
-        public IEnumerable<Product> GetCategoryProducts(string categoryName, string productName = null)
+        public IEnumerable<Product> GetProductsByCategoryName(string categoryName, string productName = null)
         {
             Category category = categoryRepository.GetCategoryByName(categoryName);
             string name = productName.ToLower().Trim();
             return category.Products.Where(p => p.Name.ToLower().Contains(name));
         }
+
+        public IEnumerable<Product> GetProductsByCategory(long categoryId)
+        {
+            Category category = categoryRepository.GetById(categoryId);
+            return category.Products;
+        }
+        public IEnumerable<Product> GetProductsBySupplier(long supplierId)
+        {
+            Supplier supplier = supplierRepository.GetById(supplierId);
+            return supplier.Products;
+        }
+
 
         public Product GetProductByID(long id)
         {
