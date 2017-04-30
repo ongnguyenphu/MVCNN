@@ -1,0 +1,138 @@
+﻿@model Customer
+@{
+    Layout = null;
+}
+
+<link href="~/Resources/CSS/bootstrap.min.css" rel="stylesheet">
+<link href="~/Resources/CSS/font-awesome.min.css" rel="stylesheet">
+<link href="~/Resources/CSS/prettyPhoto.css" rel="stylesheet">
+<link href="~/Resources/CSS/price-range.css" rel="stylesheet">
+<link href="~/Resources/CSS/animate.css" rel="stylesheet">
+<link href="~/Resources/CSS/main.css" rel="stylesheet">
+<link href="~/Resources/CSS/responsive.css" rel="stylesheet">
+
+@*header*@
+@Html.Partial("_Header")
+
+<section id="form">
+    <!--form-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-1">
+                @using (Html.BeginForm("Login", "Account"))
+                {
+                    <style>
+                        .login-input {
+                            background: #F0F0E9;
+                            border: medium none;
+                            color: #696763;
+                            display: block;
+                            font-family: 'Roboto', sans-serif;
+                            font-size: 14px;
+                            font-weight: 300;
+                            height: 40px;
+                            margin-bottom: 10px;
+                            outline: medium none;
+                            padding-left: 10px;
+                            width: 100%;
+                        }
+
+                        .login-button {
+                            background: #FE980F;
+                            border: medium none;
+                            border-radius: 0;
+                            color: #FFFFFF;
+                            display: block;
+                            font-family: 'Roboto', sans-serif;
+                            padding: 6px 25px;
+                        }
+
+                        .login-span {
+                            line-height: 51px;
+                        }
+
+                            .login-span input {
+                                width: 15px;
+                                float: left;
+                                height: 41px;
+                                margin-right: 10px;
+                            }
+                    </style>
+                    <div class="login-form">
+                        @**@
+                        <!--login form-->
+                        <h2>Login to your account</h2>
+
+                        @Html.TextBox("username", null, new { @class = "login-input", @placeholder = "Username" })
+                        @Html.TextBox("password", null, new { @class = "login-input", @placeholder = "Password" })
+                        <span class="login-span">
+                            @Html.CheckBox("remember", false, new { @class = "login-checkbox" }) Keep me signed in
+
+                        </span>
+                        <button type="submit" class="login-button">Login</button>
+                    </div><!--/login form-->
+                }
+
+            </div>
+            <div class="col-sm-1">
+                <h2 class="or">OR</h2>
+            </div>
+            <div class="col-sm-4">
+                @using (Html.BeginForm("Register", "Account", System.Web.Mvc.FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <style>
+                        .login-input {
+                            background: #F0F0E9;
+                            border: medium none;
+                            color: #696763;
+                            display: block;
+                            font-family: 'Roboto', sans-serif;
+                            font-size: 14px;
+                            font-weight: 300;
+                            height: 40px;
+                            margin-bottom: 10px;
+                            outline: medium none;
+                            padding-left: 10px;
+                            width: 100%;
+                        }
+
+                        .login-button {
+                            background: #FE980F;
+                            border: medium none;
+                            border-radius: 0;
+                            color: #FFFFFF;
+                            display: block;
+                            font-family: 'Roboto', sans-serif;
+                            padding: 6px 25px;
+                        }
+
+                        .login-span {
+                            line-height: 51px;
+                        }
+
+                            .login-span input {
+                                float: left;
+                                height: 41px;
+                                margin-right: 10px;
+                            }
+                    </style>
+                    <div class="signup-form">
+                        <!--sign up form-->
+                        <h2>New User Signup!</h2>
+                        @Html.TextBoxFor(m => m.Username, new { @class = "login-input", @placeholder = "Username" })
+                        @Html.TextBoxFor(m => m.Password, new { @class = "login-input", @placeholder = "Password" })
+                        @Html.TextBoxFor(m => m.FullName, new { @class = "login-input", @placeholder = "Full Name" })
+                        @Html.TextBoxFor(m => m.Email, new { @class = "login-input", @placeholder = "Email" })
+                        <span >
+                            <input type="file" name="upPhoto" style="height: 30px;"/>
+                        </span>
+                        @Html.HiddenFor(m => m.Photo)
+                        <input type="hidden" name="Activated" value="false" />
+                        <button type="submit" class="login-button">Signup</button>
+                    </div><!--/sign up form-->
+                }
+
+            </div>
+        </div>
+    </div>
+</section><!--/form-->

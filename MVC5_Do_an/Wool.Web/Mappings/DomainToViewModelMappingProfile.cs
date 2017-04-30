@@ -17,6 +17,8 @@ namespace Wool.Web.Mappings
             CreateMap<Category, CategoryViewModel>();
             CreateMap<Supplier, SupplierViewModel>();
             CreateMap<Product, ProductViewModel>();
+            CreateMap<Customer, CustomerViewModel>();
+            CreateMap<Order, OrderViewModel>();
 
 
             #region Admin

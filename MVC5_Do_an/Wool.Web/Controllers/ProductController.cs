@@ -1,9 +1,12 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Wool.Model;
 using Wool.Service;
+using Wool.Web.ViewModels;
 
 namespace Wool.Web.Controllers
 {
@@ -20,9 +23,12 @@ namespace Wool.Web.Controllers
         // GET: Product
         public ActionResult ListByCategory(long Id)
         {
+            IEnumerable<ProductViewModel> viewModelProducts;
+            IEnumerable<Product> products;
+            products = productService.GetProductsByCategory(Id).ToList();
+            viewModelProducts = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(products);
             Session["ShoppingUrl"] = "/Product/ListByCategory/" + Id;
-            var products = productService.GetProductsByCategory(Id).ToList();
-            return View("ProductList", products);
+            return View("ProductList", viewModelProducts);
         }
 
         public ActionResult ListBySupplier(long Id)
@@ -86,28 +92,32 @@ namespace Wool.Web.Controllers
         //    return View("ProductList", model);
         //}
 
-        //public ActionResult Detail(int Id)
-        //{
-        //    var model = dbc.Products.Find(Id);
+        public ActionResult Detail(long Id)
+        {
+            var product = productService.GetProductByID(Id);
 
-        //    // Tăng số lần xem
-        //    model.Views++;
-        //    dbc.SaveChanges();
+            // Tăng số lần xem
+            product.Views++;
+            productService.SaveProduct();
 
-        //    // Ghi nhận hàng đã xem
-        //    var cookie = Request.Cookies["Views"];
-        //    if (cookie == null)
-        //    {
-        //        cookie = new HttpCookie("Views");
-        //    }
-        //    cookie.Values[Id.ToString()] = Id.ToString();
-        //    Response.Cookies.Add(cookie);
+            // Ghi nhận hàng đã xem
+            var cookie = Request.Cookies["Views"];
+            if (cookie == null)
+            {
+                cookie = new HttpCookie("Views");
+            }
+            cookie.Values[Id.ToString()] = Id.ToString();
+            Response.Cookies.Add(cookie);
 
-        //    // Truy vấn hàng đã xem
-        //    var Ids = cookie.Values.AllKeys.Select(k => int.Parse(k)).ToList();
-        //    ViewBag.Views = dbc.Products.Where(p => Ids.Contains(p.Id));
+            // Truy vấn hàng đã xem
+            var Ids = cookie.Values.AllKeys.Select(k => long.Parse(k)).ToList();
+            ViewBag.Views = productService.GetProducts().Where(p => Ids.Contains(p.ID));
 
-        //    return View("ProductDetail", model);
-        //}
+            ProductViewModel viewModelProduct;
+            viewModelProduct = Mapper.Map<Product, ProductViewModel>(product);
+
+
+            return View("ProductDetail", viewModelProduct);
+        }
     }
 }

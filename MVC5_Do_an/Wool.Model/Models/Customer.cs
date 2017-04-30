@@ -19,6 +19,7 @@ namespace Wool.Model
         public string Email { get; set; }
         public string Photo { get; set; }
         public bool Activated { get; set; }
+        public string Username { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }
     }
