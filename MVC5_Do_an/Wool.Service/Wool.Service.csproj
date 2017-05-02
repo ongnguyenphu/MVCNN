@@ -40,6 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IService\IWebActionService.cs" />
+    <Compile Include="IService\IRoleService.cs" />
+    <Compile Include="IService\IMasterRoleService.cs" />
+    <Compile Include="IService\IActionRoleService.cs" />
+    <Compile Include="IService\IMasterService.cs" />
+    <Compile Include="ActionRoleService.cs" />
+    <Compile Include="MasterRoleService.cs" />
+    <Compile Include="RoleService.cs" />
+    <Compile Include="WebActionService.cs" />
+    <Compile Include="MasterService.cs" />
+    <Compile Include="OrderDetailService.cs" />
+    <Compile Include="IService\IOrderDetailService.cs" />
     <Compile Include="OrderService.cs" />
     <Compile Include="CustomerService.cs" />
     <Compile Include="IService\IOrderService.cs" />

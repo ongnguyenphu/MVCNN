@@ -243,13 +243,30 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CustomerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\InventoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MasterController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MasterRoleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RevenueController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RoleController.cs" />
     <Compile Include="Areas\Admin\Controllers\SupplierController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\WebActionController.cs" />
+    <Compile Include="Areas\Admin\Controllers\WebActionRoleController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Infrastructure\Statistic.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="ViewModels\Admin\AdminWebActionViewModel.cs" />
+    <Compile Include="ViewModels\Admin\AdminRoleViewModel.cs" />
+    <Compile Include="ViewModels\Admin\AdminOrderViewModel.cs" />
+    <Compile Include="ViewModels\Admin\AdminInventoryViewModel.cs" />
+    <Compile Include="ViewModels\Admin\AdminMasterRoleViewModel.cs" />
+    <Compile Include="ViewModels\Admin\AdminMasterViewModel.cs" />
+    <Compile Include="ViewModels\Admin\AdminCustomerViewModel.cs" />
     <Compile Include="ViewModels\Admin\AdminCategoryViewModel.cs" />
     <Compile Include="ViewModels\Admin\AdminProductViewModel.cs" />
     <Compile Include="ViewModels\Admin\AdminSupplierViewModel.cs" />
@@ -329,6 +346,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Customer\" />
+    <Folder Include="Areas\Admin\Views\Inventory\" />
+    <Folder Include="Areas\Admin\Views\MasterRole\" />
+    <Folder Include="Areas\Admin\Views\Master\" />
+    <Folder Include="Areas\Admin\Views\Order\" />
+    <Folder Include="Areas\Admin\Views\Revenue\" />
+    <Folder Include="Areas\Admin\Views\Role\" />
+    <Folder Include="Areas\Admin\Views\WebActionRole\" />
+    <Folder Include="Areas\Admin\Views\WebAction\" />
     <Folder Include="images\customers\" />
     <Folder Include="images\products\" />
     <Folder Include="images\suppliers\" />

@@ -48,6 +48,7 @@ namespace Wool.Service
         {
             Supplier supplier = supplierRepository.GetById(supplierId);
             return supplier.Products;
+
         }
 
 

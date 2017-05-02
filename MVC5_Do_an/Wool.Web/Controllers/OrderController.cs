@@ -23,14 +23,18 @@ namespace Wool.Web.Controllers
         public ActionResult Checkout()
         {
             var user = (Session["user"] as CustomerViewModel);
-            var model = new OrderViewModel();
+            if (user != null)
+            {
+                var model = new OrderViewModel();
 
-            model.OrderDate = DateTime.Now;
-            model.Amount = ShoppingCart.Cart.Amount;
-            model.CustomerId = user.ID;
-            model.RequireDate = DateTime.Now.AddDays(5);
-            model.Receiver = user.FullName;
-            return View(model);
+                model.OrderDate = DateTime.Now;
+                model.Amount = ShoppingCart.Cart.Amount;
+                model.CustomerId = user.ID;
+                model.RequireDate = DateTime.Now.AddDays(5);
+                model.Receiver = user.FullName;
+                return View(model);
+            }
+            return View();
         }
 
         //[HttpPost]
